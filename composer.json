@@ -45,8 +45,9 @@
             "@php please ssg:generate",
             "mv .env .env.production",
             "mv .env.backup .env",
-            "rm -rf docs",
-            "cp -r storage/app/static docs",
+            "rm -rf docs/index.html",
+            "rm -rf docs/*/index.html",
+            "cp -rf storage/app/static docs",
             "git add .",
             "git commit -m \"Deploying to GitHub Pages\""
         ],
