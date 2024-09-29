@@ -47,7 +47,7 @@
             "mv .env.backup .env",
             "rm -rf docs",
             "cp -r storage/app/static docs",
-            "git add docs",
+            "git add .",
             "git commit -m \"Deploying to GitHub Pages\""
         ],
         "pre-update-cmd": [
