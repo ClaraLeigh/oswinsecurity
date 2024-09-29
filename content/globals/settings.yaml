@@ -1,18 +1,21 @@
 title: Settings
 data:
-  site_name: 'Starter''s Creek'
+  site_name: 'Oswin Security'
   personality: casual
   show_signup: true
   social:
     -
+      id: O56OYAIf
       name: Twitter
-      url: 'https://twitter.com/statamic'
+      url: 'https://x.com/clara_leighw'
       icon: site/social-icons/twitter.svg
     -
+      id: 2e5ogEP7
       name: Github
-      url: 'https://github.com/statamic/starter-kit-starters-creek'
+      url: 'https://github.com/ClaraLeigh'
       icon: site/social-icons/github.svg
     -
-      name: Email
-      url: 'mailto:jack@statamic.com'
-      icon: site/social-icons/email.svg
+      id: m1ncuenb
+      name: LinkedIn
+      url: 'https://www.linkedin.com/in/claraleigh/'
+      icon: site/social-icons/linkedin.svg
