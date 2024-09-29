@@ -47,7 +47,7 @@
             "rm -rf docs/index.html",
             "rm -rf docs/*/index.html",
             "@php please ssg:generate",
-            "cp -rf storage/app/static docs",
+            "cp -rf storage/app/static/ docs",
             "git add .",
             "git commit -m \"Deploying to GitHub Pages\""
         ],
