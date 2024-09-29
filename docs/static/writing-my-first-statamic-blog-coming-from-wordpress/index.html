@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My first Statamic blog — Starter's Creek</title>
+        <meta name="description" content="Embarking on a new journey from WordPress to Statamic, I share my first impressions, the smooth installation, the unexpected hurdles, and the features that won me over. Join me as I explore the strengths and quirks of Statamic and set the stage for future discussions on security and web development.">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "blogPost",
+              "name": "My first Statamic blog",
+              "author": {
+                "@type": "Person",
+                "name": "Clara Leigh"
+              },
+              "datePublished": "2024-09-29",
+              "description": "Embarking on a new journey from WordPress to Statamic, I share my first impressions, the smooth installation, the unexpected hurdles, and the features that won me over. Join me as I explore the strengths and quirks of Statamic and set the stage for future discussions on security and web development."
+            }
+        </script>
+        <link rel="preload" as="style" href="https://oswinsecurity.com/build/assets/tailwind-BC3hpVre.css" /><link rel="modulepreload" href="https://oswinsecurity.com/build/assets/site-CguttYE5.js" /><link rel="stylesheet" href="https://oswinsecurity.com/build/assets/tailwind-BC3hpVre.css" /><script type="module" src="https://oswinsecurity.com/build/assets/site-CguttYE5.js"></script>
+        
+<style>
+    :root{
+      --font-display: 'Londrina Solid', 'sans-serif' !important;
+      --font-body: 'Poppins', 'sans-serif' !important;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap" rel="stylesheet">
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    </head>
+    <body class="bg-white text-black font-body leading-normal personality-casual">
+        <nav x-data="{searching: false}">
+    <div class="max-w-5xl mx-auto px-3 py-3 flex items-center justify-between h-16">
+        <a href="/" class="font-bold text-xl hover:text-hot-pink" x-show="! searching">Starter's Creek</a>
+        <button class="hover:text-hot-pink transition-all duration-100 outline-none" @click="searching = true; $nextTick(() => { $refs.search.focus() })" aria-label="Search the site">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.53 26.6"><path d="M0,24c1.2-2.28,2.93-3.75,5.24-6.11C3.15,15.24,3.06,12.2,3.93,9,5.27,4.05,11.72-.82,16,.12a14.36,14.36,0,0,1,7.27,4.94c3.48,4.46,2.94,12.37-1.74,15.72-3,2.16-7.49,5-13,.44A20.54,20.54,0,0,1,3.2,26.6,6.86,6.86,0,0,1,0,24Zm20.65-6.12c3.71-4.24,3.32-8.67-.13-11.94A8.42,8.42,0,0,0,8.9,5.86c-3.11,2.93-2.57,9.05.85,12.74S16.94,22.1,20.65,17.86Z" fill="currentColor" fill-rule="evenodd"/><path d="M13,17c.76-1.09,2.7-1.09,3.93-.73A4.8,4.8,0,0,1,13,17Z" fill="currentColor" fill-rule="evenodd"/><path d="M11.2,14.88c.68-.71,2-.83,3.06-1a23.13,23.13,0,0,1,3.35-.43c.91,0,.66.68,0,.87C15.47,14.75,13.34,15.65,11.2,14.88Z" fill="currentColor" fill-rule="evenodd"/></svg>
+        </button>
+        <form action="/search" x-show="searching" x-cloak class="flex-1">
+            <input
+                name="q"
+                type="text"
+                class="w-full outline-none px-2 py-1 ml-3"
+                placeholder="Search for stuff"
+                x-on:blur="searching = false"
+                @keydown.enter="search"
+                @keydown.esc="searching = false"
+                x-show="searching"
+                x-ref="search"
+            />
+        </form>
+    </div>
+    <div class="w-full border-b-2 border-black squiggle"></div>
+</nav>
+
+        <main class="py-12 lg:py-20">
+            <article class="max-w-5xl mx-auto px-3">
+    <header class="mx-auto max-w-3xl text-center content">
+        <h1>My first Statamic blog</h1>
+        <p>Embarking on a new journey from WordPress to Statamic, I share my first impressions, the smooth installation, the unexpected hurdles, and the features that won me over. Join me as I explore the strengths and quirks of Statamic and set the stage for future discussions on security and web development.</p>
+        <div class="my-12 flex items-center justify-center">
+            
+            <img src="/assets/picrew.png" class="h-20 w-20 my-0 rounded-full mr-4">
+            
+            <div class="text-left">
+                
+                <div>
+                    <a class="font-bold no-underline" href="/authors/clara">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-hot-pink to-purple-500">
+                            Clara Leigh
+                        </span>
+                    </a>
+                </div>
+                
+                <time datetime="2024-09-29">September 29th, 2024</time>
+            </div>
+        </div>
+    </header>
+    <img class="rounded-xl" src="/assets/statamic-the-laravel-cms.jpeg" alt="">
+    <section class="max-w-3xl mx-auto py-6 lg:py-12 content">
+        
+            
+                <h2>Start your engines</h2><p>Installing statamic was a breeze, I installed the global composer package and started the install process. </p><pre><code># Composer Install
+composer global require statamic/cli
+
+# Command to spin up a project
+statamic new OswinSecurity
+
+              $$\                $$\                             $$\
+              $$ |               $$ |                            \__|
+  $$$$$$$\ $$$$$$\    $$$$$$\ $$$$$$\    $$$$$$\   $$$$$$$$$$\  $$\  $$$$$$$\
+  $$  _____|\_$$  _|   \____$$\_$$  _|   \____$$\  $$  _$$  _$$\ $$ |$$  _____|
+  $$$$$$\     $$ |     $$$$$$$ | $$ |     $$$$$$$ |$$ / $$ / $$ |$$ |$$ /
+   \____$$\   $$ |$$\ $$  __$$ | $$ |$$\ $$  __$$ |$$ | $$ | $$ |$$ |$$ |
+  $$$$$$$  |  \$$$$  |\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ | $$ | $$ |$$ |\$$$$$$$\
+  \_______/    \____/  \_______|  \____/  \_______|\__| \__| \__|\__| \_______|
+        
+ ┌ Would you like to install a starter kit? ────────────────────┐
+ │ Yes, let me pick a Starter Kit.                              │
+ └──────────────────────────────────────────────────────────────┘</code></pre><p>First up, it asked about a starter kit, to which I naturally said yes. After a quick search, I landed on <a target="_blank" href="https://statamic.com/starter-kits/statamic/starters-creek" title="Starters Creek, a statamic starter kit">Starter&#039;s Creek</a>. It seemed simple and a little quirky, which is just my style.</p><p><img src="/assets/first-blog/image_2024-09-29_135036656.png">Next up, it asked about installing addons, and I immediately chose the static site generator. I figure a security focused blog should probably be static html and cheap to host, which I should be able to do with GitHub Pages and Cloudflare. After that, it was just a few basic questions and we were good to go!</p><h3>First Impressions</h3><p>Logging in was next and immediately I notice something not quite right in the main menu.</p><p><img src="/assets/first-blog/image_2024-09-29_135131314.png">The duplicate IDs menu item looked wrong, clearly an icon is missing and the alt text was overlaying other text making it hard to read.</p><p>Okay, okay, one bug so far, thats not too bad but still not the best first impression.</p><p>Next up it&#039;s time to write a blog, so I think of a cool title, I look up some banner images and go to upload it. </p><p>Whoops, &quot;<strong>This field is required</strong>&quot;, pops up after uploading a file.</p><p>What field you ask? Well lets open the developer tools, go to the network tab and look for an error. There is a 422 error on the assets endpoint, with the following response:</p>
+            
+        
+            
+<pre class="language-php rounded"><code>```json
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "folder": [
+            "This field is required."
+        ]
+    }
+}
+```</code></pre>
+            
+        
+            
+                <p>It appears that a folder is required? Odd because I wasn’t prompted to select one, nor was there an option available.</p><p>Okay, I open the asset manager in the left menu and then I can see all the files, including a folder button. I even managed to upload the banner image here, as I&#039;m sure I&#039;ll return to that blog later.</p><p>Now I re-open the blog creation page.... and I can&#039;t see the folder or the image I uploaded. Something is still wrong and image upload still gets the same 422 error.</p><p>Back to assets, let&#039;s look around, I see a &quot;Create Container&quot; button. Clicking on it, it seems to be a page where I can store images and choose a filesystem. Okay, this must be it, lets create one of these bad bois.</p><p><img src="/assets/first-blog/screenshot-2024-09-29-at-12.59.22 pm.png">I go back into create my blog and try again, but I see no collection when I open browse, just the same few images that come default with the starter kit.</p><p>Feeling a bit frustrated, I decided to try uploading the image directly to the main folder within Assets. That&#039;s done it, I can select the banner image in the blog and actually get started writing. </p><p>Now, I&#039;ve decided to go in a different direction with my first blog, but it feels fitting for a first post, so I start talking about the things I&#039;ve found so far. </p><p>As I was typing, I started to realize things weren’t quite right, this seems to lack any functions. Looking around I realise I&#039;m in the wrong field! I&#039;m sitting in the intro, typing out my blog, missing all the core functionality. That’s okay, it was my mistake for not scrolling down the page and noticing more options beneath the hero image. It was a small screen, easy to miss.</p><p>I move down and instantly typing is 100x better. Code blocks work, but it seems to be missing a json option out of the box, so I select markdown and use codeblocks in markdown to designate <code>json</code>. Looking on the frontend, it shows up with the text &quot;PHP&quot; 🙄 okay so thats not the best, but I don&#039;t care too much for this sort of blog, I&#039;m leaving that as is.</p><h2>Deployment time</h2><p>First, I don&#039;t even have a domain yet, so I head on over to Cloudflare, as its easy and buy myself a shinny new domain called <code>oswinsecurity.com</code>.<br>The domain name comes from my internal side project name, it&#039;s always &#039;oswin-something&#039;. Naturally I can&#039;t think of anything better so I&#039;m going to run with it for now. </p><p>After creating the domain, I setup a GitHub repo and connect it to my local install.</p><p>Next we need to generate the static html content.</p><p>Looking up the static site generator <a target="_blank" href="https://github.com/statamic/ssg">documentation</a>, I can see that to generate the site I need to run <code>php please ssg:generate</code> and then it will output a bunch of html files. It puts these files inside the storage folder but we need it moved to <code>/docs</code> to get it working on GitHub Pages, so next I run the command <code>cp storage/app/static docs</code> . We can speed this up by throwing these commands into our <code>composer.json</code> along with some extra commands to handle our production environment and git committing:</p><pre><code>&quot;scripts&quot;: {
+        &quot;deploy&quot;: [
+            &quot;mv .env .env.backup&quot;,
+            &quot;mv .env.production .env&quot;,
+            &quot;@php please ssg:generate&quot;,
+            &quot;mv .env .env.production&quot;,
+            &quot;mv .env.backup .env&quot;,
+            &quot;cp -r storage/app/static docs&quot;,
+            &quot;git add docs&quot;,
+            &quot;git commit -m \&quot;Deploying to GitHub Pages\&quot;&quot;
+        ],</code></pre><p>Once the repo is setup, navigate to GitHub, then go to the repo&#039;s <code>settings &gt; pages</code>. Change the settings so the branch points to <code>main</code> and the folder to <code>docs</code> like so:</p><p><img src="/assets/first-blog/screenshot-2024-09-29-at-5.41.07 pm.png">After we save these settings, there should be a custom domain area, which will point to the domain: <code>oswinsecurity.com</code></p><p><img src="/assets/first-blog/screenshot-2024-09-29-at-6.06.08 pm.png">Over on cloudflare, the next steps are to set the cname for the main domain and the www. domain to <code>claraleigh.github.io</code>. Which is my <code>username</code> + <code>.github.io</code></p><p>After that we should have a working site!</p><p>Visiting <a target="_blank" href="https://oswinsecurity.com">oswinsecurity.com</a> I can now see my beautiful blog up and running. Costing me just the $10/yr for the domain name.</p><h2>What did I like the most?</h2><ul><li><p><strong>The framework</strong>, it&#039;s built on Laravel, which instantly wins me over. I know if I need something, I have the skills to do it and it&#039;ll be quick</p></li><li><p><strong>The install</strong>, I like the terminal install, very dev friendly</p></li><li><p><strong>The community</strong>, I have met many a Statamic advocate and all of them are the friendliest people in the world</p></li><li><p><strong>It supports a static site!</strong> Hell yes, no future vulnerabilities in the framework will ever affect my site</p></li><li><p><strong>I can host for free?!?!</strong> Yep, all I need is GitHub and Cloudflare</p></li></ul><h2>Areas for Improvement in Statamic</h2><ul><li><p><strong>First impressions</strong>. WordPress has this beat by far.</p></li><li><p><strong>Bugs</strong>, there was so many just getting started that I nearly gave up</p></li><li><p><strong>UX</strong>, it feels like the early days in WP, like it was built by devs for devs, at least in the backend</p></li><li><p><strong>The install</strong>, it needs the 5min UI install that made WP famous. I know this is hard as updates would need to be in the UI too, which means composer and GitHub changes. This doesn&#039;t bother me much but it certainly stops mass adoption.</p></li><li><p><strong>Less is more</strong>, there is slightly too many things that I feel the need to learn, which WordPress hides by default. I&#039;m sure it will come with time but at a first look, there are things everywhere that don&#039;t have easy explanations. I&#039;m sure I&#039;m about to spend a lot of time in the documentation, something I enjoy but others might not</p></li></ul><h2>Where to from here?</h2><p>Well I am going to start writing some security blogs. This was just my first piece out the door and I used it as a learning experience. I&#039;ll likely write about my time studying for the OSCP and OSEP, why I got into security, the first time I got in trouble for hacking, and the one time I pulled a 72hr shift at work because of a security incident.</p><p>I&#039;ll see you soon in my next blog 🥷 </p>
+            
+        
+    </section>
+
+    
+        <aside class="text-center py-16 max-w-3xl mx-auto">
+    <div class="w-full border-t-2 mb-8 border-black squiggle"></div>
+    <h3 class="font-display text-4xl uppercase font-bold leading-none">Sign up for our newsletter</h3>
+    <p class="text-lg mt-8">Join our newsletter and get resources, curated content, and design inspiration delivered straight to your inbox.</p>
+
+    
+    <form action="" class="mt-8 flex flex-wrap items-center md:w-2/3 mx-auto">
+        <label for="email" class="sr-only"></label>
+        <input id="email" class="w-full flex-1 bg-gray-200 py-3 px-6 rounded" type="email" placeholder="Your email" required>
+        <button class="bg-black md:ml-3 mt-3 md:mt-0 w-full md:w-auto text-white py-3 px-6 rounded hover:squiggle" type="submit">Subscribe</button>
+    </form>
+
+    <div class="w-full border-b-2 pt-12 border-black squiggle"></div>
+</aside>
+
+    
+</article>
+
+        </main>
+        <nav class="py-6 lg:py-12 text-center">
+    <div class="text-sm">&copy; 2024 Starter's Creek – Powered by <a href="https://statamic.com?ref=starters-creek" class="hover:text-hot-pink">Statamic</a></div>
+    <div class="flex items-center justify-center mt-4">
+        
+            <a href="https://twitter.com/statamic" class="ml-4" aria-label="Twitter" rel="noopener">
+                <svg class="h-6 w-6 hover:text-hot-pink" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" viewBox="0 0 16 16" width="16" height="16"><g transform="matrix(0.6666666666666666,0,0,0.6666666666666666,0,0)"><path d="M23.32,6.44c0.212-0.177,0.241-0.492,0.065-0.704c-0.068-0.082-0.161-0.14-0.265-0.166l-0.79-0.2 c-0.268-0.067-0.431-0.339-0.364-0.606C21.974,4.731,21.986,4.7,22,4.67l0.44-0.89c0.12-0.249,0.015-0.548-0.233-0.668 C22.099,3.06,21.976,3.049,21.86,3.08l-2,0.56c-0.151,0.044-0.314,0.014-0.44-0.08c-0.865-0.649-1.918-1-3-1c-2.761,0-5,2.239-5,5 l0,0v0.36c0.001,0.127-0.094,0.235-0.22,0.25C8.39,8.5,5.7,7.07,2.8,3.73c-0.128-0.142-0.325-0.2-0.51-0.15 C2.124,3.656,2.013,3.817,2,4C1.599,5.645,1.761,7.377,2.46,8.92c0.062,0.123,0.013,0.274-0.11,0.336 C2.303,9.279,2.251,9.288,2.2,9.28L1.08,9.06C0.807,9.016,0.551,9.202,0.507,9.474C0.498,9.533,0.499,9.592,0.51,9.65 c0.175,1.555,1.047,2.945,2.37,3.78c0.124,0.06,0.176,0.21,0.116,0.334c-0.025,0.051-0.065,0.092-0.116,0.116l-0.53,0.21 c-0.256,0.103-0.381,0.394-0.278,0.65c0.005,0.014,0.011,0.027,0.018,0.04c0.595,1.302,1.791,2.229,3.2,2.48 c0.13,0.047,0.197,0.191,0.15,0.32c-0.025,0.07-0.08,0.124-0.15,0.15C3.93,18.292,2.471,18.575,1,18.56 c-0.276-0.055-0.545,0.124-0.6,0.4s0.124,0.545,0.4,0.6l0,0c2.548,1.208,5.321,1.866,8.14,1.93c2.479,0.038,4.915-0.658,7-2 c3.484-2.326,5.571-6.241,5.56-10.43V8.19c0.001-0.147,0.067-0.286,0.18-0.38L23.32,6.44z" stroke="none" fill="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+            </a>
+        
+            <a href="https://github.com/statamic/starter-kit-starters-creek" class="ml-4" aria-label="Github" rel="noopener">
+                <svg class="h-6 w-6 hover:text-hot-pink" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" viewBox="0 0 16 16" width="16" height="16">&gt;<g transform="matrix(0.6666666666666666,0,0,0.6666666666666666,0,0)"><path d="M12,0.28C5.373,0.278-0.002,5.649-0.004,12.276c-0.002,5.197,3.342,9.804,8.284,11.414h0.29 c0.551,0.034,1.026-0.385,1.06-0.936c0.003-0.041,0.003-0.083,0-0.124v-0.21c0-0.17,0-0.4,0-1.09c-0.02-0.132-0.092-0.251-0.2-0.33 c-0.118-0.095-0.272-0.132-0.42-0.1c-2.68,0.58-3.25-1.1-3.29-1.21C5.384,18.801,4.784,18.037,4,17.5 c-0.047-0.041-0.097-0.077-0.15-0.11c0.116-0.063,0.249-0.087,0.38-0.07c0.511,0.071,0.948,0.405,1.15,0.88 c0.804,1.4,2.572,1.913,4,1.16c0.15-0.065,0.258-0.2,0.29-0.36c0.038-0.463,0.236-0.897,0.56-1.23 c0.206-0.183,0.225-0.499,0.042-0.706c-0.081-0.091-0.191-0.149-0.312-0.164c-2.37-0.27-4.79-1.1-4.79-5.19 c-0.02-1.027,0.356-2.023,1.05-2.78C6.351,8.786,6.386,8.579,6.31,8.4C6.032,7.624,6.036,6.774,6.32,6 c0.924,0.164,1.791,0.559,2.52,1.15c0.122,0.086,0.277,0.112,0.42,0.07c0.893-0.242,1.814-0.367,2.74-0.37 c0.929,0.001,1.854,0.125,2.75,0.37c0.14,0.039,0.291,0.013,0.41-0.07c0.73-0.589,1.597-0.984,2.52-1.15 c0.272,0.77,0.272,1.61,0,2.38c-0.076,0.179-0.041,0.386,0.09,0.53c0.687,0.75,1.062,1.733,1.05,2.75c0,4.09-2.43,4.91-4.81,5.18 c-0.275,0.029-0.474,0.274-0.446,0.549c0.013,0.129,0.076,0.248,0.176,0.331c0.448,0.463,0.671,1.099,0.61,1.74v3.18 c-0.01,0.317,0.122,0.621,0.36,0.83c0.303,0.227,0.696,0.298,1.06,0.19c6.285-2.103,9.676-8.902,7.573-15.187 C21.71,3.592,17.147,0.296,12,0.28z" stroke="none" fill="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+            </a>
+        
+            <a href="mailto:jack@statamic.com" class="ml-4" aria-label="Email" rel="noopener">
+                <svg class="h-6 w-6 hover:text-hot-pink" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" viewBox="0 0 16 16" width="16" height="16">&gt;<g transform="matrix(0.6666666666666666,0,0,0.6666666666666666,0,0)"><path d="M 2.25,4.5h19.5c0.828,0,1.5,0.672,1.5,1.5v12c0,0.828-0.672,1.5-1.5,1.5H2.25c-0.828,0-1.5-0.672-1.5-1.5V6 C0.75,5.172,1.422,4.5,2.25,4.5z " stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 15.687,9.975L19.5,13.5 " stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 8.313,9.975L4.5,13.5 " stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 22.88,5.014l-9.513,6.56 c-0.823,0.568-1.911,0.568-2.734,0L1.12,5.014" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+            </a>
+        
+    </div>
+</nav>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0" width="0">
+    <defs>
+        <filter id="squiggle">
+            <feTurbulence type="fractalNoise" id="turbulence" baseFrequency=".05" numOctaves="4"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" scale="4" />
+        </filter>
+    </defs>
+</svg>
+
+    </body>
+</html>
