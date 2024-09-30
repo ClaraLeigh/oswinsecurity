@@ -2,7 +2,7 @@ title: Settings
 data:
   site_name: 'Oswin Security'
   personality: casual
-  show_signup: true
+  show_signup: false
   social:
     -
       id: O56OYAIf

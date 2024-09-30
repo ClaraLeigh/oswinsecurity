@@ -68,7 +68,7 @@
     ul li > code,
     ol li *:not(pre) code,
     ol li > code {
-        @apply inline-block text-white text-sm p-1 leading-none whitespace-nowrap font-mono align-baseline;
+        @apply inline-block text-purple-500 text-sm p-1 leading-none whitespace-nowrap font-mono align-baseline;
     }
 
     pre, pre&, > ul li pre, > ol li pre {
@@ -77,6 +77,10 @@
 
     pre code, pre code&, > ul li pre code, > ol li pre code {
         @apply p-4;
+    }
+
+    pre code {
+        @apply max-w-full overflow-x-auto;
     }
 
     table {
