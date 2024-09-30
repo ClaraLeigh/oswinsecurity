@@ -1,0 +1,28 @@
+title: 'Metadata: Social Sharing'
+fields:
+  -
+    handle: meta_title
+    field:
+      type: text
+      display: Title
+  -
+    handle: meta_description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: og_image
+    field:
+      container: assets
+      folder: socials
+      type: assets
+      display: 'Social image'
+      width: 50
+  -
+    handle: twitter_image
+    field:
+      container: assets
+      folder: socials
+      type: assets
+      display: 'Twitter Image'
+      width: 50
